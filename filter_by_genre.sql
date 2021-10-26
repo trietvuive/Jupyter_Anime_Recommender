@@ -3,7 +3,6 @@ INFO.rating AS Popular_Rating, INFO.members AS Members
 FROM dbo.anime_prediction AS PREDICTION 
 INNER JOIN dbo.anime_info AS INFO ON PREDICTION.anime_id = INFO.anime_id
 WHERE (INFO.Genre LIKE '%Comedy%Romance%' OR INFO.Genre LIKE '%Harem%' OR INFO.Genre LIKE '%Slice of Life%' OR INFO.Genre LIKE '%Hentai%')
-AND INFO.name LIKE '%Ore Monogatari!!%'
 ORDER BY Predicted_Rating DESC, Popular_Rating DESC;
 
 WITH PEARSON_TABLE AS
